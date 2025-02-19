@@ -1,12 +1,13 @@
 import React from 'react'
 import logoSpotify from '../assets/logo/spotify-logo.png'
+import style from './styles/Header.module.css'
 
 const Header = () => {
   return (
-    <div>
-        <img src={logoSpotify} alt='' />
+    <div className={style.header}>
+        <img src={logoSpotify} alt='logo do spotify' />
 
-        <a href='' target=''>
+        <a className={style.header__link} href='/'>
             <h1>
                 Spotify
             </h1>
