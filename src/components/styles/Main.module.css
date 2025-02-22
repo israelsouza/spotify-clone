@@ -2,10 +2,20 @@
     padding: 20px 2%;
     margin: 0 10px 10px;
     border-radius: 15px;
-    background-image: linear-gradient(to bottom, #062d14, transparent);
+    background-image: linear-gradient(
+        to bottom, 
+        var(--green-900), 
+        var(--green-1000)
+    );
     flex: 1;
+
 }
 
+.itemList{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 
 
 .itemList__header{
@@ -14,7 +24,81 @@
     align-items: center;
 }
 
+.itemList__container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) ;
+}
 
 .itemList__link:hover {
     text-decoration: underline;
+}
+
+.itemList__div_image_button{
+    position: relative;
+}
+
+
+/* SINGLE */
+
+.singleItem{
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 15px;
+    align-items: center;
+    transition: ease background-color 200ms;
+}
+
+.singleItem:hover{
+    background-color: var(--green-900);
+}
+
+.singleItem:hover .singleItem__icon{
+    opacity: 100%;
+    transition: 200ms;
+    transform: translateY(0);
+}
+
+
+.singleItem__div_image{
+    
+}
+/*  estilização de __image era pra estar e funfar em __div_image, trocar depois */
+.singleItem__image{
+    width: 140px;
+    height: 140px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.singleItem__text{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.singleItem__title{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.singleItem__type{
+    font-size: 14px;
+}
+
+.singleItem__icon{
+    position: absolute;
+    right: 7.5px;
+    bottom: 7.5px;
+    font-size: 50px;
+    color: var(--green-400);
+    opacity: 0;
+    transition-property: opacity, transform;
+    transition-timing-function: ease;
+    transition-duration: 200ms;
+    transform: translateY(100%);
 }

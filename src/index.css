@@ -1,3 +1,18 @@
+:root{
+    --green-50: hsl(141deg, 75%, 90%);
+    --green-100: hsl(141deg, 75%, 85%);
+    --green-200: hsl(141deg, 75%, 70%);
+    --green-300: hsl(141deg, 75%, 60%);
+    --green-400: hsl(141deg, 75%, 50%);
+    --green-500: hsl(141deg, 75%, 45%);
+    --green-600: hsl(141deg, 75%, 35%);
+    --green-700: hsl(141deg, 75%, 25%);
+    --green-800: hsl(141deg, 75%, 15%);
+    --green-900: hsl(141deg, 75%, 10%);
+    --green-950: hsl(141deg, 75%, 5%);
+    --green-1000: hsl(141deg, 75%, 2.5%);
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -5,11 +20,15 @@
 }
 
 body {
-    background-color: black;
+    background-color: var(--green-1000);
     color: white;
 }
 
 a {
     color: inherit;
     text-decoration: none;
+}
+
+img{
+    max-width: 100%;
 }
