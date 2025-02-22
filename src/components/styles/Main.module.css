@@ -1,0 +1,20 @@
+.main{
+    padding: 20px 2%;
+    margin: 0 10px 10px;
+    border-radius: 15px;
+    background-image: linear-gradient(to bottom, #062d14, transparent);
+    flex: 1;
+}
+
+
+
+.itemList__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.itemList__link:hover {
+    text-decoration: underline;
+}
