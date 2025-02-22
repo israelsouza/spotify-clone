@@ -222,8 +222,6 @@ const Main = () => {
           </div>
 
           <div className={style.singleItem}>
-
-
             <div className={style.itemList__div_image_button}>
               <div className={style.itemList__div_image}>
                 <img
@@ -239,11 +237,7 @@ const Main = () => {
               <p className={style.singleItem__title}>Henrique & Juliano</p>
               <p className={style.singleItem__type}>Artista</p>
             </div>
-
           </div>
-
-
-          
         </div>
       </div>
     </div>
