@@ -20,8 +20,7 @@ const ItemList = ({ title, items }) => {
             return (
               <SingleItem
                 key={`${title}-${index}`}
-                name={currentValue.name}
-                image={currentValue.image}
+                {...currentValue}
               />
             );
           })}
