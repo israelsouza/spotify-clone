@@ -1,11 +1,11 @@
 import React from "react";
 import style from "./styles/Main.module.css";
 import { FaPlayCircle } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
-const SingleItem = ({ name, image }) => {
-    console.log(image)
+const SingleItem = ({ id, idPath, name, image, artist }) => {
   return (
-    <div className={style.singleItem}>
+    <Link to={`${idPath}/${id}`} className={style.singleItem}>
       <div className={style.itemList__div_image_button}>
         <div className={style.itemList__div_image}>
           <img
@@ -19,9 +19,9 @@ const SingleItem = ({ name, image }) => {
 
       <div className={style.singleItem__text}>
         <p className={style.singleItem__title}>{name}</p>
-        <p className={style.singleItem__type}>Artista</p>
+        <p className={style.singleItem__type}>{artist ?? "Artista"}</p>
       </div>
-    </div>
+    </Link>
   );
 };
 

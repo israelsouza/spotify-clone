@@ -1,26 +1,27 @@
 import React from "react";
 import SingleItem from "./SingleItem";
 import style from "./styles/Main.module.css";
-import { artistArray } from "../assets/database/artists";
+import { Link } from "react-router-dom";
 
-const ItemList = ({ title, items }) => {
+const ItemList = ({ title, items, itemArray, path, idPath }) => {
   return (
     <div className={style.itemList}>
       <div className={style.itemList__header}>
         <h2>{title} populares</h2>
-        <a className={style.main__link} href="/">
+        <Link to={path} className={style.main__link} >
           Mostrar tudo
-        </a>
+        </Link>
       </div>
 
       <div className={style.itemList__container}>
-        {artistArray
+        {itemArray
           .filter((currValue, index) => index < items)
           .map((currentValue, index) => {
             return (
               <SingleItem
                 key={`${title}-${index}`}
                 {...currentValue}
+                idPath={idPath}
               />
             );
           })}
