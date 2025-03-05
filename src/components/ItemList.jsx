@@ -1,21 +1,36 @@
-import React from "react";
+import React, { use } from "react";
 import SingleItem from "./SingleItem";
 import style from "./styles/Main.module.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const ItemList = ({ title, items, itemArray, path, idPath }) => {
+  const { pathname } = useLocation();
+  const isHome = pathname === "/";
+
+  // forma mais eficiente
+  const finalItems = isHome ? items : Infinity;
+
+  // menos eficiente
+  // let finalItems;
+  // isHome ? (finalItems = items) : (finalItems = Infinity);
+
   return (
     <div className={style.itemList}>
       <div className={style.itemList__header}>
         <h2>{title} populares</h2>
-        <Link to={path} className={style.main__link} >
-          Mostrar tudo
-        </Link>
+
+        {isHome ? (
+          <Link to={path} className={style.main__link}>
+            Mostrar tudo
+          </Link>
+        ) : (
+          <></>
+        )}
       </div>
 
       <div className={style.itemList__container}>
         {itemArray
-          .filter((currValue, index) => index < items)
+          .filter((currValue, index) => index < finalItems)
           .map((currentValue, index) => {
             return (
               <SingleItem
