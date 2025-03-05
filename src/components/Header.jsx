@@ -6,7 +6,9 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <div className={style.header}>
-      <img src={logoSpotify} alt="logo do spotify" />
+      <Link to="/" className={style.header__link}>
+        <img src={logoSpotify} alt="logo do spotify" />
+      </Link>
 
       <Link to="/" className={style.header__link}>
         <h1>Spotify</h1>
