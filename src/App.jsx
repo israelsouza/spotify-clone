@@ -13,11 +13,15 @@ function App() {
         <Header />
 
         <Routes>
+          
           <Route path="/" element={<Main />} />
+
           <Route path="/songs" element={<Songs />} />
+          <Route path="/artists" element={<Artists />} />
+
           <Route path="/song/:id" element={<Song />} />
           <Route path="/artist/:id" element={<Artist />} />
-          <Route path="/artists" element={<Artists />} />
+        
         </Routes>
       </BrowserRouter>
     </>
