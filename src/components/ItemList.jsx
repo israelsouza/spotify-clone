@@ -1,6 +1,7 @@
 import React, { use } from "react";
 import SingleItem from "./SingleItem";
-import style from "./styles/Main.module.css";
+import "../assets/css/item_list.css";
+
 import { Link, useLocation } from "react-router-dom";
 
 const ItemList = ({ title, items, itemArray, path, idPath }) => {
@@ -15,12 +16,12 @@ const ItemList = ({ title, items, itemArray, path, idPath }) => {
   // isHome ? (finalItems = items) : (finalItems = Infinity);
 
   return (
-    <div className={style.itemList}>
-      <div className={style.itemList__header}>
+    <div className="itemList">
+      <div className="itemList__header">
         <h2>{title} populares</h2>
 
         {isHome ? (
-          <Link to={path} className={style.main__link}>
+          <Link to={path} className="main__link">
             Mostrar tudo
           </Link>
         ) : (
@@ -28,7 +29,7 @@ const ItemList = ({ title, items, itemArray, path, idPath }) => {
         )}
       </div>
 
-      <div className={style.itemList__container}>
+      <div className="itemList__container">
         {itemArray
           .filter((currValue, index) => index < finalItems)
           .map((currentValue, index) => {
