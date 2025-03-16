@@ -1,7 +1,4 @@
 import express from "express";
-import { artistArray } from "../front/src/assets/database/artists.js";
-import { songsArray } from "../front/src/assets/database/songs.js";
-
 import { db } from "./src/api/connect.js";
 
 const app = express();
