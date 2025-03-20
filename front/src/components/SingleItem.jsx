@@ -3,9 +3,9 @@ import React from "react";
 import { FaPlayCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const SingleItem = ({ id, idPath, name, image, artist }) => {
+const SingleItem = ({ _id, idPath, name, image, artist }) => {
   return (
-    <Link to={`${idPath}/${id}`} className="singleItem">
+    <Link to={`${idPath}/${_id}`} className="singleItem">
       <div className="itemList__div_image_button">
         <div className="itemList__div_image">
           <img
