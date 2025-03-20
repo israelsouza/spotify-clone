@@ -7,8 +7,8 @@ import { artistArray } from "../assets/database/artists";
 const Song = () => {
   const { id } = useParams();
 
-  const { name, duration, image, artist } = songsArray.filter(
-    (currSongObj) => currSongObj.id === Number(id)
+  const { name, duration, image, artist, audio } = songsArray.filter(
+    (currSongObj) => currSongObj._id === id
   )[0];
 
   const artistObj = artistArray.filter(
@@ -27,8 +27,8 @@ const Song = () => {
     Math.random() * (songsArrayFromArtist.length - 1)
   );
 
-  const randomIdFromArtist = songsArrayFromArtist[randomIndex].id;
-  const randomIdFromArtistTwo = songsArrayFromArtist[randomIndexTwo].id;
+  const randomIdFromArtist = songsArrayFromArtist[randomIndex]._id;
+  const randomIdFromArtistTwo = songsArrayFromArtist[randomIndexTwo]._id;
 
   return (
     <div className="song">
@@ -39,7 +39,7 @@ const Song = () => {
       </div>
 
       <div className="song__bar">
-        <Link to={`/artist/${artistObj.id}`} className="song__artist-image">
+        <Link to={`/artist/${artistObj._id}`} className="song__artist-image">
           <img
             src={artistObj.image}
             alt={`Imagem do artista ${artist}`}
@@ -52,6 +52,7 @@ const Song = () => {
           duration={duration}
           randomIdFromArtist={randomIdFromArtist}
           randomIdFromArtistTwo={randomIdFromArtistTwo}
+          audio={audio}
         />
 
         <div className="song__info">
