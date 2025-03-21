@@ -2,7 +2,7 @@
 
 import axios from "axios";
 
-const url = "http://localhost:3001/api";
+const url = "https://spotify-clone-wyt4.onrender.com/api"; // "http://localhost:3001/api";
 
 const endpointArtists = "/artists";
 const endpointSongs = "/songs";
