@@ -1,0 +1,27 @@
+{
+  "name": "clone-spotify",
+  "version": "1.0.0",
+  "description": "clone do spotify",
+  "main": "index.js",
+  "scripts": {
+    "build": "",
+    "start": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/israelsouza/spotify-clone.git"
+  },
+  "keywords": [
+    "clone",
+    "front-end",
+    "back-end",
+    "spotiy",
+    "full-stack"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/israelsouza/spotify-clone/issues"
+  },
+  "homepage": "https://github.com/israelsouza/spotify-clone#readme"
+}
