@@ -1,6 +1,9 @@
 import express from "express";
 import cors from "cors";
 import { db } from "./src/api/connect.js";
+import path from "path";
+
+const __dirname = path.resolve();
 
 const app = express();
 const PORT = 3001;
@@ -19,10 +22,12 @@ app.get("/api/songs", async (request, response) => {
   response.send(await db.collection("songs").find({}).toArray());
 });
 
-app.use(express.static("../front/dist"));
+app.use(express.static(path.join(__dirname, "../front/dist")));
 
 app.get("*", async (request, response) => {
-  response.sendFile(express.static("../front/dist/index.html"));
+  response.sendFile(
+    express.static(path.join(__dirname, "../front/dist/index.html"))
+  );
 });
 
 app.listen(PORT, () => {
